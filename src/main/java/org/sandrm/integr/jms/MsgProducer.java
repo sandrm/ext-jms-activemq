@@ -40,7 +40,11 @@ public class MsgProducer {
         messageProducer.send(textMessage);
         //System.out.print("Message was sent: " + textMessage.getText());
         LOG.log(Level.INFO, "Message was sent: " + textMessage.getText());
+        LOG.info("This is branch Feature_2 ");
 
         connection.close();
+        LOG.log(Level.INFO, "Producer finished.");
+
+
     }
 }
