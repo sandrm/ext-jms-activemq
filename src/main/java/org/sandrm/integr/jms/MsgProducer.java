@@ -42,5 +42,8 @@ public class MsgProducer {
         LOG.log(Level.INFO, "Message was sent: " + textMessage.getText());
 
         connection.close();
+        LOG.log(Level.INFO, "Producer finished.");
+
+        LOG.info("This is branch Feature_1 ");
     }
 }
