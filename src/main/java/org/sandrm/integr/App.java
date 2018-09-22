@@ -16,10 +16,10 @@ public class App {
 
         try {
             //BasicConfigurator.configure();
-            new MsgProducer();
-            //new MsgConsumer();
-        } catch (NamingException e) {
-            e.printStackTrace();
+            //new MsgProducer();
+            new MsgConsumer();
+//        } catch (NamingException e) {
+//            e.printStackTrace();
         } catch (JMSException e) {
             e.printStackTrace();
         }
