@@ -1,6 +1,7 @@
 package org.sandrm.integr;
 
 import org.apache.log4j.BasicConfigurator;
+import org.sandrm.integr.jms.MsgConsumer;
 import org.sandrm.integr.jms.MsgProducer;
 
 import javax.jms.JMSException;
@@ -15,9 +16,10 @@ public class App {
 
         try {
             //BasicConfigurator.configure();
-            new MsgProducer();
-        } catch (NamingException e) {
-            e.printStackTrace();
+            //new MsgProducer();
+            new MsgConsumer();
+//        } catch (NamingException e) {
+//            e.printStackTrace();
         } catch (JMSException e) {
             e.printStackTrace();
         }
