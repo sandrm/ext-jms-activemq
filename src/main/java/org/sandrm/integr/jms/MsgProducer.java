@@ -6,14 +6,18 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
  * Created by sandr on 22.09.2018.
  */
 public class MsgProducer {
+    public static final Logger LOG = Logger.getLogger(MsgProducer.class.getName());
 
     public static final boolean IS_TRANSACTED = false;  //depends on Java SE env or Java EE container
+    public static final String QUEUE_NAME = "ext.myQueue";
 
     public MsgProducer() throws NamingException, JMSException {
         //Get a JNDI connection
@@ -29,12 +33,13 @@ public class MsgProducer {
         Session session = connection.createSession(IS_TRANSACTED, Session.AUTO_ACKNOWLEDGE);
 
         //Destination destination = (Destination) jndi.lookup("queue.myQueue");
-        Queue queueDestination = session.createQueue("ext.myQueue");
+        Queue queueDestination = session.createQueue(QUEUE_NAME);
         MessageProducer messageProducer = session.createProducer(queueDestination);
         TextMessage textMessage = session.createTextMessage("Test JMS message!");
 
         messageProducer.send(textMessage);
-        System.out.print("Message was sent: " + textMessage.getText());
+        //System.out.print("Message was sent: " + textMessage.getText());
+        LOG.log(Level.INFO, "Message was sent: " + textMessage.getText());
 
         connection.close();
     }

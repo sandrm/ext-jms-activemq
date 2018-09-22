@@ -9,9 +9,9 @@ import javax.naming.NamingException;
 
 
 public class App {
-    public static void main( String[] args ){
+    public static void main(String[] args) {
 
-        System.out.println( "Test JMS App! Start!" );
+        System.out.println("Test JMS App! Start!");
 
         try {
             //BasicConfigurator.configure();
@@ -22,6 +22,6 @@ public class App {
             e.printStackTrace();
         }
 
-        System.out.println( "Test JMS App! Done!" );
+        System.out.println("Test JMS App! Done!");
     }
 }
