@@ -1,10 +1,7 @@
 package org.sandrm.integr;
 
 import org.apache.log4j.BasicConfigurator;
-import org.sandrm.integr.jms.MsgConsumer;
-import org.sandrm.integr.jms.MsgObjectConsumer;
-import org.sandrm.integr.jms.MsgObjectProducer;
-import org.sandrm.integr.jms.MsgProducer;
+import org.sandrm.integr.jms.*;
 
 import javax.jms.JMSException;
 import javax.naming.InitialContext;
@@ -18,6 +15,7 @@ public class App {
 
         try {
             //BasicConfigurator.configure();
+/*
             new MsgObjectProducer();
 
             Thread.sleep(5000);
@@ -25,12 +23,19 @@ public class App {
             Thread threadConsumer = new Thread(new MsgObjectConsumer());
             threadConsumer.start();
 
+*/
+            new MsgPublisher();
+
+            new MsgSubscriber("Client A", "SUB1234");
+
+            new MsgSubscriber("Client B", "SUB56789");
+
         } catch (JMSException e) {
             e.printStackTrace();
         } catch (NamingException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
         }
 
         System.out.println("Test JMS App! Done!");
