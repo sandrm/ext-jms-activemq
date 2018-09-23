@@ -6,6 +6,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -35,11 +36,11 @@ public class MsgProducer {
         //Destination destination = (Destination) jndi.lookup("queue.myQueue");
         Queue queueDestination = session.createQueue(QUEUE_NAME);
         MessageProducer messageProducer = session.createProducer(queueDestination);
-        TextMessage textMessage = session.createTextMessage("Test JMS message!");
+        TextMessage textMessage = session.createTextMessage("Test JMS message ! " + new Date().toString());
 
         messageProducer.send(textMessage);
         //System.out.print("Message was sent: " + textMessage.getText());
-        LOG.log(Level.INFO, "Message was sent: " + textMessage.getText());
+        LOG.log(Level.INFO, "Message was sent: '" + textMessage.getText() + "'");
         LOG.info("This is branch Feature_2 ");
 
         connection.close();
