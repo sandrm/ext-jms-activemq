@@ -16,10 +16,12 @@ public class App {
 
         try {
             //BasicConfigurator.configure();
-            new MsgProducer();
-            //new MsgConsumer();
-        } catch (NamingException e) {
-            e.printStackTrace();
+            //new MsgProducer();
+
+            Thread threadConsumer = new Thread(new MsgConsumer());
+            threadConsumer.start();
+//        } catch (NamingException e) {
+//            e.printStackTrace();
         } catch (JMSException e) {
             e.printStackTrace();
         }
