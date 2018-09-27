@@ -24,7 +24,7 @@ public class App {
             threadConsumer.start();
 
 */
-            new MsgPublisher();
+            ////new MsgPublisher();
 
             new MsgSubscriber("Client A", "SUB1234");
 
@@ -32,8 +32,8 @@ public class App {
 
         } catch (JMSException e) {
             e.printStackTrace();
-        } catch (NamingException e) {
-            e.printStackTrace();
+///        } catch (NamingException e) {
+///            e.printStackTrace();
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
         }
