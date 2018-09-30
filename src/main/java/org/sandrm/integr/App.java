@@ -25,8 +25,8 @@ public class App {
             Thread threadConsumer = new Thread(new MsgSyncConsumer());
             threadConsumer.start();
 
-*/
-            new MsgPublisher();
+
+//            new MsgPublisher();
 
             //new MsgPublisher().input();
 
