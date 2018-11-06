@@ -2,7 +2,6 @@ package org.sandrm.integr;
 
 import org.apache.log4j.BasicConfigurator;
 import org.sandrm.integr.jms.*;
-import org.sandrm.integr.jms.sync.MsgSyncProducer;
 
 import javax.jms.JMSException;
 import javax.naming.InitialContext;
@@ -20,18 +19,16 @@ public class App {
             new MsgObjectProducer();
 
             Thread.sleep(5000);
+*/
 
-            Thread threadConsumer = new Thread(new MsgObjectConsumer());
+            Thread threadConsumer = new Thread(new MsgSyncConsumer());
             threadConsumer.start();
 
-*/
-            ////new MsgPublisher();
 
 //            new MsgSubscriber("Client A", "SUB1234");
 
 //            new MsgSubscriber("Client B", "SUB56789");
 
-            new MsgSyncProducer();
         } catch (JMSException e) {
             e.printStackTrace();
         } catch (NamingException e) {
