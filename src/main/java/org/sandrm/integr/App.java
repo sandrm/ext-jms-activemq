@@ -41,5 +41,7 @@ public class App {
         }
 
         System.out.println("Test JMS App! Done!");
+
+        System.out.println("This is branch: Feature_6");
     }
 }
