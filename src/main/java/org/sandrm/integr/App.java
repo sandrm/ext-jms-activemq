@@ -44,5 +44,7 @@ public class App {
 
 
         System.out.println("This is Feature_5 branch - crete Tag example");
+
+        System.out.println("This is branch: Feature_6");
     }
 }
