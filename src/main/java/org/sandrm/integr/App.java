@@ -43,6 +43,6 @@ public class App {
         System.out.println("Test JMS App! Done!");
 
 
-        System.out.println("This is Feature_5 branch");
+        System.out.println("This is Feature_5 branch - crete Tag example");
     }
 }
